@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing cindx db</title>
+    <!-- <link rel="stylesheet" href="../css/extra.css"> -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to ccindx Testing</h1>
+    <div>
+        <button id="getUsers" class="w3-button w3-blue w3-round" >Get users</button>
+        <p>Create user Post request</p>
+        <button id="createUser" class="w3-button w3-blue w3-round" >Create user</button>
+        <input style="margin: 10px;" type="text" id="userFirstName" placeholder="user firstname" /> <br />
+        <input style="margin: 10px;" type="text" id="userLastName" placeholder="user firstname" /> <br />
+        <input style="margin: 10px;" type="text" id="usertName" placeholder="pick a username" /> <br />
+        <input style="margin: 10px;" type="text" id="userPhone" placeholder="enter phone number" /> <br />
+    </div>
+
+
+<script>
+    $(document).ready(function(){
+        $("#getUsers").click(function(){
+            console.log('Getting users called');
+            $.get("http://localhost:1000/users", function(data, status){
+                console.log(status);
+                console.log(data);
+                // console.log("Data: " + data + "\nStatus: " + status);
+            });
+        });
+
+        $("#createUser").click(function(){
+            console.log('creating user called');
+            $.get("http://localhost:1000/users", function(data, status){
+                console.log(status);
+                console.log(data);
+                // console.log("Data: " + data + "\nStatus: " + status);
+            });
+
+            $.get("http://localhost:1000/users",
+            {
+                
+            }, function(data, status){
+                console.log(status);
+                console.log(data);
+                // console.log("Data: " + data + "\nStatus: " + status);
+            });
+        });
+
+
+
+    });
+</script>
+    
+</body>
+</html>
