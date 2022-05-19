@@ -11,5 +11,4 @@ userRouter.post('/', userController.createUser);
 userRouter.put('/image', userController.updateUserImage);
 userRouter.put('/status/', userController.changeUserStatus);
 
-
 module.exports = userRouter;
